@@ -3,5 +3,7 @@ export type Props = {
 }
 
 export type UsersState = {
-  folders: Array<{ name: string; messages: Array<string> }>;
+  folders: Array<UserFolder>;
 }
+
+export type UserFolder = { name: string; messages: Array<string> }
