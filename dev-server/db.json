@@ -1,0 +1,54 @@
+{
+  "user": {
+    "customFolders": [
+      {
+        "name": "test",
+        "messagesId": [
+          "uuid1"
+        ]
+      }
+    ]
+  },
+  "messages": [
+    {
+      "id": "uuid1",
+      "sender": "Name",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "isRead": true,
+      "isSpam": false,
+      "isImportant": true,
+      "isfavorite": true,
+      "receivedAt": "2022-05-05T16:31:44.774Z"
+    },
+    {
+      "id": "uuid2",
+      "sender": "Name2",
+      "text": "Mauris pharetra et ultrices neque ornare aenean. Iaculis eu non diam phasellus vestibulum lorem sed risus. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Habitant morbi tristique senectus et. Magna eget est lorem ipsum dolor. Enim eu turpis egestas pretium aenean pharetra. Sagittis purus sit amet volutpat consequat. Fermentum dui faucibus in ornare quam viverra orci sagittis eu.",
+      "isRead": true,
+      "isSpam": false,
+      "isImportant": false,
+      "isfavorite": false,
+      "receivedAt": "2022-05-05T16:31:44.774Z"
+    },
+    {
+      "id": "uuid3",
+      "sender": "Name3",
+      "text": "Tristique risus nec feugiat in fermentum posuere urna nec tincidunt. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Enim diam vulputate ut pharetra sit amet. Ut diam quam nulla porttitor massa id neque aliquam. Libero enim sed faucibus turpis in eu mi.",
+      "isRead": false,
+      "isSpam": false,
+      "isImportant": false,
+      "isfavorite": false,
+      "receivedAt": "2022-05-05T16:31:44.774Z"
+    },
+    {
+      "id": "uuid4",
+      "sender": "Name4",
+      "text": "Tristique risus nec feugiat in fermentum posuere urna nec tincidunt. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Enim diam vulputate ut pharetra sit amet. Ut diam quam nulla porttitor massa id neque aliquam. Libero enim sed faucibus turpis in eu mi.",
+      "isRead": false,
+      "isSpam": true,
+      "isImportant": false,
+      "isfavorite": false,
+      "receivedAt": "2022-05-05T16:31:44.774Z"
+    }
+  ]
+}
