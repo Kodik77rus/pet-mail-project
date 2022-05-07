@@ -10,11 +10,10 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setFolder: (state, action: PayloadAction<Array<UserFolder>>) => {
-
+    setFolder: (state, action: PayloadAction<UserFolder[]>) => {
+      state.folders = action.payload
     },
     createFolder: (state, action: PayloadAction<UserFolder>) => {
-
     },
     updateFolder: (state, action: PayloadAction<UserFolder>) => {
 
@@ -25,6 +24,11 @@ export const userSlice = createSlice({
   },
 })
 
-export const { setFolder, createFolder, updateFolder, deleteFolder } = userSlice.actions
+export const {
+  setFolder,
+  createFolder,
+  updateFolder,
+  deleteFolder,
+} = userSlice.actions
 
 export default userSlice.reducer

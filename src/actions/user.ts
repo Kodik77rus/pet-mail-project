@@ -3,9 +3,8 @@ import { AppDispatch } from '../store'
 
 import { UserFolder } from '../types'
 
-
-export const setUserFolder = (folder: Array<UserFolder>) => (dispatch: AppDispatch) => {
-  dispatch(setFolder(folder))
+export const setUserFolder = (folders: UserFolder[]) => (dispatch: AppDispatch) => {
+  dispatch(setFolder(folders))
 }
 
 export const createUserFolder = (folder: UserFolder) => (dispatch: AppDispatch) => {

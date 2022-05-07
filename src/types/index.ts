@@ -3,7 +3,15 @@ export type Props = {
 }
 
 export type UsersState = {
-  folders: Array<UserFolder>;
+  folders: UserFolder[];
 }
 
-export type UserFolder = { name: string; messages: Array<string> }
+export type SideBarProps = {
+  userfolders: UserFolder[],
+}
+
+export type GetUserResponse = {
+  customFolders: UserFolder[]
+}
+
+export type UserFolder = { name: string; messagesId: string[] }
