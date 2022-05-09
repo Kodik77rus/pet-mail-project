@@ -2,9 +2,9 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { store } from '../../store'
-import { UserFolder } from '../../types'
 import { getUserFoldersRequest } from '../../services'
 import { setUserFolder } from '../../actions'
+import { localStorageData } from '../../utils'
 
 import { Layout } from '../layout'
 import { MailBoxContent } from '../mailbox-content'
@@ -13,11 +13,10 @@ import { MailBoxContent } from '../mailbox-content'
 ;(async () => {
   if (!localStorage.user) {
     const data = await getUserFoldersRequest()
-    localStorage.setItem('user_folders', JSON.stringify(data))
+    localStorageData.userFolder = data
     store.dispatch(setUserFolder(data))
   }
-  // @ts-ignore
-  const folders: UserFolder[] = JSON.parse(localStorage.getItem('user_folders'))
+  const folders = localStorageData.userFolder
   store.dispatch(setUserFolder(folders))
 })()
 

@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { useState } from 'react'
 
 import { RootState } from '../../store'
-import { SideBarProps } from '../../types'
+import { createUserFolder } from '../../actions'
 
-export const SidebarComponent = ({
-  userfolders,
-}: SideBarProps) => {
-  const [folderName, setfolderName] = useState('')
-
-  const onSave = (e: React.MouseEvent<HTMLButtonElement>) => {
+const SidebarComponent = ({ userfolders, createUserFolder }: Props) => {
+  const onSave = (e: React.MouseEvent) => {
     e.preventDefault()
+
+    const folderName = prompt()
+    if (folderName === null) {
+      return
+    }
+
+    createUserFolder(folderName)
   }
 
   return (
@@ -60,27 +62,14 @@ export const SidebarComponent = ({
                 </Link>
               </li>
             ))}
-          <div className='input-group input-group-sm mb-3'>
-            <input
-              type='text'
-              className='form-control'
-              aria-label='Small'
-              aria-describedby='inputGroup-sizing-sm'
-              value={folderName}
-              onChange={(e) => setfolderName(e.target.value)}
-            />
-            <div
-              className='input-group input-group-sm mb-3'
-              style={{ display: 'grid' }}
+          <div className='input-group input-group-sm mt-2'>
+            <button
+              className='btn btn-primary btn-sm'
+              type='button'
+              onClick={onSave}
             >
-              <button
-                className='btn btn-primary btn-sm'
-                type='button'
-                onClick={onSave}
-              >
-                Button
-              </button>
-            </div>
+              Add folder
+            </button>
           </div>
         </ul>
       </div>
@@ -92,9 +81,16 @@ const mapStateToProps = (state: RootState) => ({
   userfolders: state.user.folders,
 })
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {
+  createUserFolder,
+}
 
-export const Sidebar = connect(
+export const Sidebar = connect<StateProps, DispatchProps>(
   mapStateToProps,
   mapDispatchToProps,
 )(SidebarComponent)
+
+
+type StateProps = ReturnType<typeof mapStateToProps>
+type DispatchProps = typeof mapDispatchToProps
+type Props = StateProps & DispatchProps 

@@ -1,7 +1,7 @@
 import { Sidebar } from '../saidbar'
-import { Props } from '../../types'
+import { LayoutProps } from '../../types'
 
-export const Layout = ({ children }: Props) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className='container mt-5'>
       <div className='row'>

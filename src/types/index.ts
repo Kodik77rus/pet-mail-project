@@ -1,6 +1,6 @@
-export type Props = {
-  children: JSX.Element
-}
+import { PropsWithChildren } from 'react'
+
+export type LayoutProps = PropsWithChildren<{}>
 
 export type UsersState = {
   folders: UserFolder[];

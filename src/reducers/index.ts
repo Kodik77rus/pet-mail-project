@@ -2,9 +2,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { UsersState, UserFolder } from '../types'
 
-const initialState = {
+const initialState: UsersState = {
   folders: [],
-} as UsersState
+}
 
 export const userSlice = createSlice({
   name: 'user',
@@ -14,6 +14,7 @@ export const userSlice = createSlice({
       state.folders = action.payload
     },
     createFolder: (state, action: PayloadAction<UserFolder>) => {
+      state.folders.push(action.payload)
     },
     updateFolder: (state, action: PayloadAction<UserFolder>) => {
 
